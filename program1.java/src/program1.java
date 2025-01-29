@@ -1,6 +1,6 @@
 //Britt Bradley, writing a verse and giving the title and author.
 
-public class Main {
+public class program1 {
     public static void main(String[] args) {
         System.out.println("\tLike Janis (song) by Sixto Rodrígues\n");
 
