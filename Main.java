@@ -1,47 +1,37 @@
-//Britt Bradley, Computing a Rubber Mallet's Vol, Weight, and TotalCost
+//Brit Bradley, Converting Weights in Pounds to Kilograms
 
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-
         Scanner kb = new Scanner(System.in);
-        double volume, length, width, hb_height, ch_height,
-                radius, weight, CostPerPound, TotalCost;
-        final double DensityRubber = 0.0341435;
+        char con;
+        double pounds, kilograms;
+        final double KiloPerPound = 0.45359237;
 
-        System.out.println("Computing a Rubber Mallet\n" );
-        System.out.println("Please enter the dimensions");
+        System.out.println("Converting Pounds to Kilograms");
 
-        //Calculations for Volume and Weight
-        System.out.print("Hammer Box's Length (inches): ");
-        length = kb.nextDouble();
+        do {
 
-        System.out.print("Hammer Box's Width (inches): ");
-        width = kb.nextDouble();
+            do{
+                System.out.print("Enter the weight (pounds): ");
+                pounds = kb.nextDouble();
 
-        System.out.print("Hammer Box's Height (inches): ");
-        hb_height = kb.nextDouble();
+                if(pounds < 0){
+                    System.out.println("Error");
+                    System.out.println("Enter a positive number");
+                }
 
-        System.out.print("Cylindrical Handle's Radius (inches): ");
-        radius = kb.nextDouble();
+            }while (pounds < 0);
 
-        System.out.print("Cylindrical Handle's height (inches): ");
-        ch_height = kb.nextDouble();
+            kilograms = pounds * KiloPerPound;
 
-        volume = (length * width * hb_height) + (Math.PI * Math.pow(radius,2) * ch_height);
+            System.out.println("\nPounds: " + pounds +
+                    " = " + "Kilograms: " + kilograms);
 
-        //Density of Rubber = lbs per cubic inch
-        weight = (volume * DensityRubber);
+            System.out.println("Converter another number? (y = yes / n = no)");
+            con = kb.next().charAt(0);
 
-        //Computing Cost
-        System.out.print("Please enter the cost of Rubber (per pound): " );
-        CostPerPound = kb.nextDouble();
-        TotalCost = weight * CostPerPound;
+        } while (con == 'y');
 
-        System.out.println("");
-        System.out.println("The mallet's volume is " + volume);
-        System.out.println("The mallet's weight is " + weight);
-        System.out.println("The mallet's total cost is $" + TotalCost);
     }
 }
