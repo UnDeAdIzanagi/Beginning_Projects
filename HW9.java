@@ -1,7 +1,7 @@
 //Brit Bradley, Converting Weights in Pounds to Kilograms
 
 import java.util.Scanner;
-public class Main {
+public class HW9 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         char con;
